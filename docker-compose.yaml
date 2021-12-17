@@ -1,5 +1,5 @@
 kind: Environment
-version: v1
+version: v2
 metadata:
     com.bunnyshell.k8s.id: 134
     com.bunnyshell.k8s.unique: ay2h7m
@@ -9,7 +9,7 @@ environmentVariables: {  }
 builtinVariables:
     BNS_INGRESS_URL_EMILIA_0: emilia-ay2h7m.bnyenv.com
 components:
-    -
+
         kind: StaticApplication
         gitApplicationPath: /
         buildNodeVersion: lts
@@ -34,7 +34,7 @@ components:
         k8s: null
         podSharing: {  }
         hosts:
-            -
+        
                 hostname: emilia-ay2h7m.bnyenv.com
                 path: /
                 servicePort: 8080
