@@ -1,13 +1,40 @@
-version: "3.9"
-    
-services:
-    
-  myapp:
-    build:
-      context: ./
-    ports:
-      - "8000:80"
-    restart: always
-
-volumes:
-  db_data: {}
+kind: Environment
+version: v1
+metadata:
+    com.bunnyshell.k8s.id: 134
+    com.bunnyshell.k8s.unique: ay2h7m
+name: static
+type: primary
+environmentVariables: {  }
+builtinVariables:
+    BNS_INGRESS_URL_EMILIA_0: emilia-ay2h7m.bnyenv.com
+components:
+    -
+        kind: StaticApplication
+        gitApplicationPath: /
+        buildNodeVersion: lts
+        buildCommand: 'gatsby build'
+        buildOutputDir: public
+        buildArguments: {  }
+        version: v1
+        name: emilia
+        metadata:
+            com.bunnyshell.k8s.source-file: 'git://github.com/sorinpopescunr1/gatsby-starter-portfolio-emilia.git/package.json'
+            com.bunnyshell.k8s.source-file-hash: eb229f40d7f989d238f5a69805798335acae8030
+            com.bunnyshell.k8s.source-block-hash: 9ffbba31f299b8908b1b65d359993f6d
+            com.bunnyshell.k8s.id: 214
+            com.bunnyshell.k8s.display-name: emilia
+            com.bunnyshell.k8s.unique: ay2h7m-0
+        gitRepo: 'git://github.com/sorinpopescunr1/gatsby-starter-portfolio-emilia.git'
+        gitBranch: master
+        gitPackageJsonPath: /package.json
+        builtinVariables:
+            BNS_GIT_BRANCH: master
+        envVarMapping: {  }
+        k8s: null
+        podSharing: {  }
+        hosts:
+            -
+                hostname: emilia-ay2h7m.bnyenv.com
+                path: /
+                servicePort: 8080
